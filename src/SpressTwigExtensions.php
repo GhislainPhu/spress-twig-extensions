@@ -10,6 +10,7 @@ class SpressTwigExtensions implements PluginInterface
 {
     public function initialize(EventSubscriber $subscriber)
     {
+        $subscriber->addEventListener('spress.start', 'onStart');
     }
 
     public function getMetas()
@@ -20,5 +21,19 @@ class SpressTwigExtensions implements PluginInterface
             'author'      => 'Ghislain PHU',
             'license'     => 'MIT',
         ];
+    }
+
+    public function onStart(EnvironmentEvent $event)
+    {
+        $configValues = $event->getConfigValues();
+        $configValues['twig_extensions'] = (new Configuration($configValues))->getExtensions();
+        $event->setConfigValues($configValues);
+
+        $factory = new ExtensionFactory();
+        $renderizer = $event->getRenderizer();
+
+        foreach ($configValues['twig_extensions'] as $extension) {
+            $factory->getExtension($extension)->load($renderizer);
+        }
     }
 }
