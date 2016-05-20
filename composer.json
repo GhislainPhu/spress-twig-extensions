@@ -1,0 +1,24 @@
+{
+    "name": "ghislainphu/spress-twig-extensions",
+    "type": "spress-plugin",
+    "description": "Add twig/extensions to Spress.",
+    "keywords": [
+        "spress",
+        "plugin",
+        "twig"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ghislain PHU",
+            "email": "contact@ghislainphu.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "GhislainPhu\\Spress\\Plugin\\TwigExtensions\\": "src/" }
+    },
+    "require": {
+        "spress/spress-installer": "2.0.*",
+        "twig/extensions": "^1.3"
+    }
+}
