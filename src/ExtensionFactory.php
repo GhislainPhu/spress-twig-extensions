@@ -2,8 +2,20 @@
 
 namespace GhislainPhu\Spress\Plugin\TwigExtensions;
 
+/**
+ * Extension Factory
+ *
+ * @author Ghislain PHU <contact@ghislainphu.fr>
+ */
 class ExtensionFactory
 {
+    /**
+     * Get a new Extension from a given string
+     *
+     * @param string $name The name of the extension
+     * @throws \UnexpectedValueException if the extension is not supported
+     * @return Extension
+     */
     public function getExtension($name)
     {
         $classmap = self::getClassmap();
@@ -18,6 +30,11 @@ class ExtensionFactory
         throw new \UnexpectedValueException("Cannot load extension `$name`. Supported: $supported.");
     }
 
+    /**
+     * Get a map of twig_extension => classname
+     *
+     * @return array
+     */
     protected static function getClassmap()
     {
         return array(
