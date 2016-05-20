@@ -20,5 +20,8 @@
     "require": {
         "spress/spress-installer": "2.0.*",
         "twig/extensions": "^1.3"
+    },
+    "extra": {
+        "spress_class": "GhislainPhu\\Spress\\Plugin\\TwigExtensions\\SpressTwigExtensions"
     }
 }
