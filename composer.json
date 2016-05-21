@@ -15,7 +15,9 @@
         }
     ],
     "autoload": {
-        "psr-4": { "GhislainPhu\\Spress\\Plugin\\TwigExtensions\\": "src/" }
+        "psr-4": {
+            "GhislainPhu\\Spress\\Plugin\\TwigExtensions\\": "src/"
+        }
     },
     "require": {
         "spress/spress-installer": "2.0.*",
