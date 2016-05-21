@@ -54,7 +54,11 @@ class SpressTwigExtensions implements PluginInterface
         $renderizer = $event->getRenderizer();
 
         foreach ($configValues['twig_extensions'] as $extension) {
-            $factory->getExtension($extension)->load($renderizer);
+            try {
+                $factory->getExtension($extension)->load($renderizer);
+            } catch(\UnexpectedValueException $e) {
+                $event->getIO()->warning($e->getMessage());
+            }
         }
     }
 }
