@@ -42,7 +42,6 @@ class SpressTwigExtensions implements PluginInterface
      * Load requested Twig extensions on startup
      *
      * @param EnvironmentEvent $event The start event
-     * @throws \UnexpectedValueException if a requested extension doesn't exists
      */
     public function onStart(EnvironmentEvent $event)
     {
