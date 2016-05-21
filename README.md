@@ -6,18 +6,10 @@ This [Spress](https://github.com/spress/Spress) plugin provides extra [Twig](htt
 
 ## Getting Started
 
-Add the following lines to your `composer.json` and run `composer update`:
+Run:
 
-```json
-"repositories": [
-    {
-        "type": "vcs",
-        "url": "https://github.com/GhislainPhu/spress-twig-extensions"
-    }
-],
-"require": {
-    "ghislainphu/spress-twig-extensions": "dev-master"
-}
+```shell
+composer require ghislainphu/spress-twig-extensions
 ```
 
 Add this line to your `config.yml`:
