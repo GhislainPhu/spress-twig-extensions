@@ -56,7 +56,7 @@ class SpressTwigExtensions implements PluginInterface
         foreach ($configValues['twig_extensions'] as $extension) {
             try {
                 $factory->getExtension($extension)->load($renderizer);
-            } catch(\UnexpectedValueException $e) {
+            } catch (\UnexpectedValueException $e) {
                 $event->getIO()->warning($e->getMessage());
             }
         }
